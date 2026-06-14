@@ -1,0 +1,748 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>RepasoCódigo | Python & Java</title>
+    <!--Aqui llamo la hoja de los estilos-->
+    <link rel="stylesheet" href="estilos.css">
+    <!--Favicon-->
+    <link rel="icon" type="image/svg+xml" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'%3E%3Ctext y='70' font-size='60'%3E🐍☕%3C/text%3E%3C/svg%3E">
+</head>
+<body>
+    <!-- =============================================
+     NAVEGACIÓN
+     ============================================= -->
+<nav>
+  <div class="nav-logo">
+    <div class="logo-icon">🧑‍💻</div>
+    <div class="logo-text">Nex<span>Code</span></div>
+    <span class="badge badge-py">PY</span>
+    <span class="badge badge-java">JAVA</span>
+  </div>
+
+  <!-- BOTÓN HAMBURGUESA -->
+  <button class="menu-toggle" onclick="toggleMenu()">
+    ☰
+  </button>
+
+  <div class="nav-center">
+    <button class="nav-tab active"      onclick="showSection('home')">Inicio</button>
+    <button class="nav-tab"             onclick="showSection('python')">Python</button>
+    <button class="nav-tab java-tab"    onclick="showSection('java')">Java</button>
+    <button class="nav-tab"             onclick="showSection('vscode')">VS Code</button>
+    <button class="nav-tab"             onclick="showSection('conceptos')">Conceptos</button>
+    <button class="nav-tab"             onclick="showSection('faq')">Preguntas Frecuentes</button>
+    <button class="nav-tab"             onclick="showSection('ayudas')">Otras Ayudas</button> 
+  </div>
+  <button class="btn-dev" onclick="openDev()">👨‍💻 Dev</button>
+</nav>
+
+<!-- =============================================
+     MODAL DEL DESARROLLADOR
+     ============================================= -->
+<div class="modal-overlay" id="devModal" onclick="closeDev(event)">
+  <div class="modal">
+    <div class="dev-avatar">
+        <img src="img/eg3KEnQ.png" alt="Juan Bedoya">
+    </div>
+    <div class="dev-name">Juan David Bedoya Salazar</div>
+    <div class="dev-role">🎓 Ingeniero Informático</div>
+    <div class="dev-contact">
+      <!-- ✏️ CAMBIA TU CORREO Y NÚMERO AQUÍ -->
+      <div class="dev-contact-row"><span class="ico">📧</span><span>juandabes2121@gmail.com</span></div>
+      <div class="dev-contact-row">
+        <span class="ico">📱</span>
+        <a href="https://wa.me/573150478178" target="_blank" rel="noopener noreferrer"
+            style="color:var(--neon-green);text-decoration:none;font-size:.8rem;transition:opacity .2s;"
+            onmouseover="this.style.opacity='.7'" onmouseout="this.style.opacity='1'">Abrir WhatsApp
+        </a>
+    </div>
+    </div>
+    <div class="dev-desc">
+      Herramienta de repaso de programación para los lenguajes de Python y Java.<br>
+      Creada con el fin de que puedas practicar Python y Java de forma fácil, portable y sin instalar nada.
+    </div>
+    <div class="dev-tags">
+      <span class="dev-tag">Python</span>
+      <span class="dev-tag">Java</span>
+      <span class="dev-tag">Ingeniería de Software</span>
+      <span class="dev-tag">Docencia</span>
+    </div>
+    <div class="dev-ver">RepasoCódigo v1.0 · Portable · Sin instalación</div>
+    <button class="btn-modal-close" onclick="document.getElementById('devModal').classList.remove('open')">Cerrar</button>
+  </div>
+</div>
+
+<!-- =============================================
+     HOME
+     ============================================= -->
+<div class="section active main" id="sec-home">
+  <div style="position:relative">
+    <div class="hero-glow"></div>
+    <div class="hero">
+      <div class="hero-subtitle">⚡ Herramienta de Estudio · Portable · Sin instalación</div>
+      <h1>Aprende Python & Java<br>con ejercicios interactivos</h1>
+      <p>Practica, verifica tus respuestas, lee soluciones documentadas y domina los conceptos fundamentales de programación.</p>
+      <div class="lang-grid">
+        <div class="lang-card py" onclick="showSection('python')">
+          <!--<div class="lang-icon-big">🐍</div>-->
+          <div class="lang-icon-big">
+            <svg viewBox="0 0 100 100" width="30" height="30" xmlns="http://www.w3.org/2000/svg">
+                <!-- Cuerpo serpiente azul (Python arriba) -->
+                <path d="M50 8 C35 8 22 14 22 28 L22 45 C22 50 26 54 32 54 L50 54 C53 54 55 56 55 59 L55 62 L38 62 C26 62 18 70 18 80 C18 80 18 92 32 92 L44 92 C44 92 50 92 50 85 L50 70 L68 70 C80 70 82 60 82 56 L82 28 C82 14 65 8 50 8Z" 
+                      fill="#00d4ff" opacity="0.9"/>
+                <!-- Ojo serpiente azul -->
+                <circle cx="38" cy="28" r="4" fill="#05070f"/>
+                <!-- Cuerpo serpiente amarilla (Python abajo, reflejo) -->
+                <path d="M50 92 C65 92 78 86 78 72 L78 55 C78 50 74 46 68 46 L50 46 C47 46 45 44 45 41 L45 38 L62 38 C74 38 82 30 82 20 C82 20 82 8 68 8 L56 8 C56 8 50 8 50 15 L50 30 L32 30 C20 30 18 40 18 44 L18 72 C18 86 35 92 50 92Z" 
+                      fill="#ffe600" opacity="0.85"/>
+                <!-- Ojo serpiente amarilla -->
+                <circle cx="62" cy="72" r="4" fill="#05070f"/>
+            </svg>
+        </div>
+          <h2>Python</h2>
+          <p>El lenguaje más popular para aprender. Sintaxis limpia y elegante.</p>
+          <div class="topic-chips">
+            <span class="topic-chip">Variables</span>
+            <span class="topic-chip">Funciones</span>
+            <span class="topic-chip">Listas</span>
+            <span class="topic-chip">Bucles</span>
+            <span class="topic-chip">POO</span>
+          </div>
+        </div>
+        <div class="lang-card java" onclick="showSection('java')">
+          <!--<div class="lang-icon-big">☕</div>-->
+          <div class="lang-icon-big">
+            <svg viewBox="0 0 100 100" width="32" height="32" xmlns="http://www.w3.org/2000/svg">
+                <!-- Vapor izquierdo -->
+                <path d="M32 22 C32 17 36 15 36 10 C36 5 32 3 32 3" 
+                      fill="none" stroke="#ffe600" stroke-width="3" 
+                      stroke-linecap="round" opacity=".5"/>
+                <!-- Vapor central -->
+                <path d="M50 20 C50 14 54 12 54 7 C54 2 50 0 50 0" 
+                      fill="none" stroke="#ffe600" stroke-width="3" 
+                      stroke-linecap="round" opacity=".7"/>
+                <!-- Vapor derecho -->
+                <path d="M68 22 C68 17 72 15 72 10 C72 5 68 3 68 3" 
+                      fill="none" stroke="#ffe600" stroke-width="3" 
+                      stroke-linecap="round" opacity=".5"/>
+                <!-- Cuerpo de la taza -->
+                <path d="M18 35 L24 85 C24 88 27 90 30 90 L70 90 C73 90 76 88 76 85 L82 35 Z" 
+                      fill="#ffe60018" stroke="#ffe600" stroke-width="3.5" stroke-linejoin="round"/>
+                <!-- Asa de la taza -->
+                <path d="M76 45 C92 45 95 52 95 58 C95 66 90 72 76 72" 
+                      fill="none" stroke="#ffe600" stroke-width="3.5" 
+                      stroke-linecap="round"/>
+                <!-- Línea decorativa del café dentro -->
+                <path d="M30 52 Q50 58 70 52" 
+                      fill="none" stroke="#ffe600" stroke-width="2" 
+                      stroke-linecap="round" opacity=".4"/>
+                <!-- Platillo -->
+                <path d="M10 92 Q50 100 90 92" 
+                      fill="none" stroke="#ffe600" stroke-width="3" 
+                      stroke-linecap="round" opacity=".6"/>
+            </svg>
+        </div>
+          <h2>Java</h2>
+          <p>El estándar de la industria. Tipado fuerte, orientado a objetos.</p>
+          <div class="topic-chips">
+            <span class="topic-chip">Tipos</span>
+            <span class="topic-chip">Métodos</span>
+            <span class="topic-chip">Arrays</span>
+            <span class="topic-chip">Clases</span>
+            <span class="topic-chip">Herencia</span>
+          </div>
+        </div>
+      </div>
+      <div class="how-box">
+        <div class="how-title">🚀 ¿Cómo usar esta herramienta?</div>
+        <div class="how-step"><div class="how-num">1</div><div>Elige un lenguaje en el menú de arriba o en las tarjetas.</div></div>
+        <div class="how-step"><div class="how-num">2</div><div>Presiona <strong>Generar ejercicios</strong> o filtra por tema.</div></div>
+        <div class="how-step"><div class="how-num">3</div><div>Lee el enunciado y escribe tu solución en el cuadro de código.</div></div>
+        <div class="how-step"><div class="how-num">4</div><div>Presiona <strong>✓ Verificar</strong> — te dirá si vas bien o qué te falta.</div></div>
+        <div class="how-step"><div class="how-num">5</div><div>Usa <strong>Ver Solución</strong> y <strong>📖 Documentación</strong> para entender cada concepto.</div></div>
+        <div class="how-step"><div class="how-num">6</div><div>Accede a la herramienta desde cualquier navegador y practica Python y Java cuando quieras.</div></div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- =============================================
+     PYTHON
+     ============================================= -->
+<div class="section main" id="sec-python">
+  <div class="ex-header">
+    <div>
+      <div style="display:flex; align-items:center; gap:8px;">
+        <span style="font-size:1.3rem; line-height:1;">🐍</span>
+        <div class="sec-title py">Ejercicios de Python</div>
+      </div>
+      <div class="sec-sub">Practica los conceptos fundamentales de Python con ejercicios interactivos</div>
+    </div>
+    <button class="btn-gen py" onclick="generateEx('python')">⟳ Generar ejercicios</button>
+  </div>
+  <div class="filter-row" id="py-filters">
+    <button class="filter-btn py-f active" onclick="setFilter('python','all',this)">Todos</button>
+    <button class="filter-btn py-f" onclick="setFilter('python','variables',this)">Variables</button>
+    <button class="filter-btn py-f" onclick="setFilter('python','condicionales',this)">Condicionales</button>
+    <button class="filter-btn py-f" onclick="setFilter('python','funciones',this)">Funciones</button>
+    <button class="filter-btn py-f" onclick="setFilter('python','bucles',this)">Bucles</button>
+    <button class="filter-btn py-f" onclick="setFilter('python','listas',this)">Listas</button>
+    <button class="filter-btn py-f" onclick="setFilter('python','cadenas',this)">Cadenas</button>
+    <button class="filter-btn py-f" onclick="setFilter('python','poo',this)">POO</button>
+  </div>
+  <div class="stats-row" id="py-stats" style="display:none">
+    <div class="stat-pill"><span class="sval" id="py-total">0</span><span class="slbl">Ejercicios</span></div>
+    <div class="stat-pill"><span class="sval" id="py-ok" style="color:var(--neon-green)">0</span><span class="slbl">Correctos</span></div>
+    <div class="stat-pill"><span class="sval" id="py-att">0</span><span class="slbl">Intentos</span></div>
+  </div>
+  <div id="py-list"></div>
+</div>
+
+<!-- =============================================
+     JAVA
+     ============================================= -->
+<div class="section main" id="sec-java">
+  <div class="ex-header">
+    <div>
+      <div style="display:flex; align-items:center; gap:8px;">
+        <span style="font-size:1.3rem; line-height:1;">☕</span>
+        <div class="sec-title java">Ejercicios de Java</div>
+      </div>
+      <div class="sec-sub">Domina los conceptos de Java con práctica guiada y soluciones documentadas</div>
+    </div>
+    <button class="btn-gen java" onclick="generateEx('java')">⟳ Generar ejercicios</button>
+  </div>
+  <div class="filter-row" id="java-filters">
+    <button class="filter-btn java-f active" onclick="setFilter('java','all',this)">Todos</button>
+    <button class="filter-btn java-f" onclick="setFilter('java','variables',this)">Variables</button>
+    <button class="filter-btn java-f" onclick="setFilter('java','condicionales',this)">Condicionales</button>
+    <button class="filter-btn java-f" onclick="setFilter('java','metodos',this)">Métodos</button>
+    <button class="filter-btn java-f" onclick="setFilter('java','bucles',this)">Bucles</button>
+    <button class="filter-btn java-f" onclick="setFilter('java','arrays',this)">Arrays</button>
+    <button class="filter-btn java-f" onclick="setFilter('java','poo',this)">POO</button>
+  </div>
+  <div class="stats-row" id="java-stats" style="display:none">
+    <div class="stat-pill"><span class="sval" id="java-total">0</span><span class="slbl">Ejercicios</span></div>
+    <div class="stat-pill"><span class="sval" id="java-ok" style="color:var(--neon-yellow)">0</span><span class="slbl">Correctos</span></div>
+    <div class="stat-pill"><span class="sval" id="java-att">0</span><span class="slbl">Intentos</span></div>
+  </div>
+  <div id="java-list"></div>
+</div>
+
+<!-- =============================================
+     VS CODE
+     ============================================= -->
+<div class="section main" id="sec-vscode">
+  <div style="display:flex; align-items:center; gap:8px; margin-bottom:.35rem">
+    <span style="font-size:1.3rem; line-height:1;">🧩</span>
+    <div class="sec-title py">Extensiones para VS Code</div>
+  </div>
+  <div class="sec-sub" style="margin-bottom:0">Instálalas con <span class="kbd">Ctrl+Shift+X</span> en VS Code y busca el nombre exacto</div>
+
+  <div class="ext-section-title">🐍 Para Python</div>
+  <div class="ext-grid" id="ext-py"></div>
+
+  <div class="ext-section-title">☕ Para Java</div>
+  <div class="ext-grid" id="ext-java"></div>
+
+  <div class="ext-section-title">🛠️ Utilidades Generales</div>
+  <div class="ext-grid" id="ext-gen"></div>
+
+  <div class="install-guide">
+    <strong>📦 ¿Cómo instalar extensiones?</strong><br>
+    1. Abre VS Code<br>
+    2. Presiona <span class="kbd">Ctrl+Shift+X</span> (o clic en el ícono de extensiones en la barra lateral)<br>
+    3. Busca el nombre exacto de la extensión<br>
+    4. Haz clic en <strong>Instalar</strong><br>
+    5. ¡Listo! Algunas requieren reiniciar VS Code para activarse.
+  </div>
+</div>
+
+<!-- =====================================================
+     SECCIÓN CONCEPTOS
+===================================================== -->
+<section id="sec-conceptos" class="section">
+
+  <div class="hero">
+    <div style="display:flex; align-items:center; justify-content:center; gap:10px; margin-bottom:.8rem">
+        <span style="font-size:2rem; line-height:1;">📚</span>
+        <h1 style="margin-bottom:0">Conceptos Fundamentales de Programación</h1>
+    </div>
+    <p>
+      Antes de aprender Python o Java es importante comprender los conceptos
+      que utilizan todos los lenguajes de programación.
+      Aquí encontrarás explicaciones sencillas y ejemplos prácticos.
+    </p>
+  </div>
+
+  <!-- VARIABLES -->
+  <div class="card">
+    <h2>📦 Variables</h2>
+
+    <p>
+      Una variable es un espacio donde se almacena información para usarla más adelante.
+      Piensa en ella como una caja con una etiqueta.
+    </p>
+
+    <div class="example">
+      <h3>Python</h3>
+      <pre><code>nombre = "Juan" edad = 25 print(nombre) print(edad)</code></pre>
+    </div>
+
+    <div class="example">
+      <h3>Java</h3>
+      <pre><code>String nombre = "Juan"; int edad = 25; System.out.println(nombre); System.out.println(edad);</code></pre>
+    </div>
+  </div>
+
+  <!-- PRINT -->
+  <div class="card">
+    <h2>🖨️ print() / System.out.println()</h2>
+
+    <p>
+      Permite mostrar información en pantalla.
+      Es una de las instrucciones más utilizadas cuando estamos aprendiendo.
+    </p>
+
+    <div class="example">
+      <h3>Python</h3>
+      <pre><code>print("Hola Mundo")</code></pre>
+    </div>
+
+    <div class="example">
+      <h3>Java</h3>
+      <pre><code>System.out.println("Hola Mundo");</code></pre>
+    </div>
+  </div>
+
+  <!-- INPUT -->
+  <div class="card">
+    <h2>⌨️ Entrada de Datos</h2>
+
+    <p>
+      Permite que el usuario escriba información desde el teclado.
+    </p>
+
+    <div class="example">
+      <h3>Python</h3>
+      <pre><code>nombre = input("Ingrese su nombre: ") print(nombre)</code></pre>
+    </div>
+
+    <div class="example">
+      <h3>Java</h3>
+      <pre><code>Scanner sc = new Scanner(System.in); String nombre = sc.nextLine(); System.out.println(nombre);</code></pre>
+    </div>
+  </div>
+
+  <!-- IF -->
+  <div class="card">
+    <h2>🔀 Condicional IF</h2>
+
+    <p>
+      Permite tomar decisiones.
+      Si una condición es verdadera, se ejecuta un bloque de código.
+    </p>
+
+    <div class="example">
+      <h3>Python</h3>
+      <pre><code>edad = 18 if edad >= 18: print("Es mayor de edad")</code></pre>
+    </div>
+
+    <div class="example">
+      <h3>Java</h3>
+      <pre><code>int edad = 18; if(edad >= 18){ System.out.println("Es mayor de edad"); }</code></pre>
+    </div>
+  </div>
+
+  <!-- IF ELSE -->
+  <div class="card">
+    <h2>↔️ IF / ELSE</h2>
+
+    <p>
+      Permite ejecutar un camino cuando la condición es verdadera
+      y otro cuando es falsa.
+    </p>
+
+    <div class="example">
+      <h3>Python</h3>
+      <pre><code>edad = 16 if edad >= 18: print("Mayor de edad") else: print("Menor de edad")</code></pre>
+    </div>
+
+    <div class="example">
+      <h3>Java</h3>
+      <pre><code>
+        int edad = 16; 
+            if(edad >= 18){
+                System.out.println("Mayor de edad");
+            }else{
+                System.out.println("Menor de edad");
+            }</code></pre>
+    </div>
+  </div>
+
+  <!-- FOR -->
+  <div class="card">
+    <h2>🔁 Ciclo FOR</h2>
+
+    <p>
+      Sirve para repetir instrucciones una cantidad determinada de veces.
+    </p>
+
+    <div class="example">
+      <h3>Python</h3>
+      <pre><code>for i in range(5):
+    print(i)</code></pre>
+    </div>
+
+    <div class="example">
+      <h3>Java</h3>
+      <pre><code>for(int i = 0; i < 5; i++){
+    System.out.println(i);
+}</code></pre>
+    </div>
+  </div>
+
+  <!-- WHILE -->
+  <div class="card">
+    <h2>🔄 Ciclo WHILE</h2>
+
+    <p>
+      Repite instrucciones mientras una condición sea verdadera.
+    </p>
+
+    <div class="example">
+      <h3>Python</h3>
+      <pre><code>
+        contador = 1
+            while contador <= 5:
+                print(contador)
+            contador += 1</code></pre>
+    </div>
+
+    <div class="example">
+      <h3>Java</h3>
+      <pre><code>
+        int contador = 1;
+            while(contador <= 5){
+                System.out.println(contador);
+                contador++;
+        }</code></pre>
+    </div>
+  </div>
+
+  <!-- FUNCIONES -->
+  <div class="card">
+    <h2>⚙️ Funciones</h2>
+
+    <p>
+      Una función es un bloque reutilizable de código.
+      Evita repetir instrucciones.
+    </p>
+
+    <div class="example">
+      <h3>Python</h3>
+      <pre><code>def saludar():
+    print("Hola")
+
+saludar()</code></pre>
+    </div>
+
+    <div class="example">
+      <h3>Java</h3>
+      <pre><code>public static void saludar(){
+    System.out.println("Hola");
+}
+
+saludar();</code></pre>
+    </div>
+  </div>
+
+  <!-- LISTAS -->
+  <div class="card">
+    <h2>📋 Listas / Arrays</h2>
+
+    <p>
+      Permiten almacenar varios datos dentro de una misma estructura.
+    </p>
+
+    <div class="example">
+      <h3>Python</h3>
+      <pre><code>equipos = ["Real Madrid", "Barcelona", "Liverpool"]
+
+print(equipos[0])</code></pre>
+    </div>
+
+    <div class="example">
+      <h3>Java</h3>
+      <pre><code>String[] equipos = {
+ "Real Madrid",
+ "Barcelona",
+ "Liverpool"
+};
+
+System.out.println(equipos[0]);</code></pre>
+    </div>
+  </div>
+
+  <!-- POO -->
+  <div class="card">
+    <h2>🏛️ Programación Orientada a Objetos (POO)</h2>
+
+    <p>
+      La POO permite representar objetos del mundo real dentro de un programa.
+      Es uno de los conceptos más utilizados en proyectos empresariales.
+    </p>
+
+    <div class="example">
+      <h3>Python</h3>
+      <pre><code>class Persona:
+
+    def __init__(self, nombre):
+        self.nombre = nombre
+
+persona = Persona("Juan")
+
+print(persona.nombre)</code></pre>
+    </div>
+
+    <div class="example">
+      <h3>Java</h3>
+      <pre><code>class Persona{
+
+    String nombre;
+
+    Persona(String nombre){
+        this.nombre = nombre;
+    }
+}</code></pre>
+    </div>
+  </div>
+
+  <!-- EXCEPCIONES -->
+  <div class="card">
+    <h2>⚠️ Manejo de Errores</h2>
+
+    <p>
+      Permite controlar errores para que la aplicación no se detenga.
+    </p>
+
+    <div class="example">
+      <h3>Python</h3>
+      <pre><code>try:
+    numero = 10 / 0
+except:
+    print("Ocurrió un error")</code></pre>
+    </div>
+
+    <div class="example">
+      <h3>Java</h3>
+      <pre><code>try{
+    int x = 10 / 0;
+}catch(Exception e){
+    System.out.println("Error");
+}</code></pre>
+    </div>
+  </div>
+
+</section>
+
+<!-- =============================================
+     PREGUNTAS FRECUENTES
+============================================= -->
+<section id="sec-faq" class="section">
+
+  <div class="hero">
+    <div style="display:flex; align-items:center; justify-content:center; gap:10px; margin-bottom:.8rem">
+        <span style="font-size:2rem; line-height:1;">❓</span>
+        <h1 style="margin-bottom:0">Preguntas Frecuentes</h1>
+    </div>
+    <p>
+      Respuestas rápidas a las dudas más comunes que suelen surgir
+      cuando se está aprendiendo Python, Java y programación en general.
+    </p>
+  </div>
+
+  <div class="faq-container">
+
+    <div class="faq-item">
+      <button class="faq-question">
+        ¿Qué lenguaje debo aprender primero?
+      </button>
+      <div class="faq-answer">
+        Python suele ser el lenguaje más recomendado para principiantes
+        debido a su sintaxis sencilla. Java también es excelente porque
+        enseña fundamentos sólidos de programación orientada a objetos.
+      </div>
+    </div>
+
+    <div class="faq-item">
+      <button class="faq-question">
+        ¿Cuánto tiempo tarda aprender programación?
+      </button>
+      <div class="faq-answer">
+        Depende de la práctica. Con constancia diaria de 30 a 60 minutos,
+        normalmente se pueden aprender las bases en pocos meses.
+      </div>
+    </div>
+
+    <div class="faq-item">
+      <button class="faq-question">
+        ¿Qué diferencia hay entre Python y Java?
+      </button>
+      <div class="faq-answer">
+        Python es más simple y rápido para comenzar.
+        Java suele ser más estricto y ampliamente utilizado en aplicaciones empresariales.
+      </div>
+    </div>
+
+    <div class="faq-item">
+      <button class="faq-question">
+        ¿Debo memorizar todo?
+      </button>
+      <div class="faq-answer">
+        No. Lo importante es entender los conceptos.
+        Incluso los desarrolladores experimentados consultan documentación constantemente.
+      </div>
+    </div>
+
+    <div class="faq-item">
+      <button class="faq-question">
+        ¿Por qué mi programa genera errores?
+      </button>
+      <div class="faq-answer">
+        Los errores forman parte del aprendizaje.
+        Leer el mensaje de error cuidadosamente ayuda a identificar el problema.
+      </div>
+    </div>
+
+    <div class="faq-item">
+      <button class="faq-question">
+        ¿Qué es la Programación Orientada a Objetos?
+      </button>
+      <div class="faq-answer">
+        Es un paradigma que permite representar elementos del mundo real mediante clases y objetos.
+      </div>
+    </div>
+
+    <div class="faq-item">
+      <button class="faq-question">
+        ¿Qué hago cuando me bloqueo?
+      </button>
+      <div class="faq-answer">
+        Descansa unos minutos, divide el problema en partes pequeñas
+        y vuelve a intentarlo. También puedes consultar documentación oficial.
+      </div>
+    </div>
+
+  </div>
+
+  <div class="contact-help-card">
+    <h3>💬 ¿No encuentras tu pregunta?</h3>
+    <p>
+      Si tienes una duda que no aparece aquí,
+      utiliza el botón <strong>Dev</strong> ubicado en la parte superior
+      para comunicarte con el desarrollador mediante correo o WhatsApp. O en su defecto presiona este botón de aquí
+    </p>
+    <button class="btn-contact-dev" onclick="openDev()">
+    👨‍💻 Presiona aquí para contactar al desarrollador
+  </button>
+  </div>
+
+</section>
+
+<!-- =============================================
+     OTRAS AYUDAS
+============================================= -->
+<section id="sec-ayudas" class="section">
+
+  <div class="hero">
+    <div style="display:flex; align-items:center; justify-content:center; gap:10px; margin-bottom:.8rem">
+        <span style="font-size:2rem; line-height:1;">🚀</span>
+        <h1 style="margin-bottom:0">Otras Ayudas para Aprender</h1>
+    </div>
+    <p>
+      Recursos, plataformas y recomendaciones que pueden ayudarte
+      a complementar tu aprendizaje en Python y Java.
+    </p>
+  </div>
+
+  <div class="help-card">
+
+    <h2>🎥 Cómo buscar videos en YouTube</h2>
+
+    <p>
+      En lugar de depender de un único curso, puedes buscar:
+    </p>
+
+    <ul class="help-list">
+      <li>Python desde cero</li>
+      <li>Curso completo de Python</li>
+      <li>Python para principiantes</li>
+      <li>Java desde cero</li>
+      <li>Programación Orientada a Objetos Java</li>
+      <li>Ejercicios resueltos Python</li>
+      <li>Ejercicios resueltos Java</li>
+      <li>Python proyectos prácticos</li>
+      <li>Java proyectos prácticos</li>
+    </ul>
+
+  </div>
+
+  <div class="help-card">
+
+    <h2>🎮 Plataformas para Practicar</h2>
+
+    <ul class="help-list">
+      <li>HackerRank</li>
+      <li>CodeWars</li>
+      <li>LeetCode</li>
+      <li>CodeCombat</li>
+      <li>CheckiO</li>
+      <li>Codingame</li>
+      <li>SoloLearn</li>
+      <li>W3Schools</li>
+    </ul>
+
+  </div>
+
+  <div class="help-card">
+
+    <h2>📚 Documentación Oficial</h2>
+
+    <p>
+      Siempre es recomendable consultar documentación oficial
+      para obtener información actualizada y confiable.
+    </p>
+
+    <ul class="help-list">
+      <li>Documentación Oficial de Python</li>
+      <li>Documentación Oficial de Java</li>
+      <li>Oracle Java Documentation</li>
+      <li>OpenJDK Documentation</li>
+    </ul>
+
+  </div>
+
+  <div class="help-card">
+
+    <h2>🧠 Consejos para Aprender Más Rápido</h2>
+
+    <ul class="help-list">
+      <li>Practica todos los días aunque sean 20 minutos.</li>
+      <li>No copies soluciones sin intentar resolver primero.</li>
+      <li>Lee errores y aprende de ellos.</li>
+      <li>Crea proyectos personales.</li>
+      <li>Explica lo aprendido a otra persona.</li>
+      <li>Combina teoría con práctica.</li>
+      <li>Mantén constancia y paciencia.</li>
+    </ul>
+
+  </div>
+
+</section>
+<!--Aqui llamo las funciones lo que le da vida al sitio de js-->
+<script src="main.js"></script>
+</body>
+</html>
